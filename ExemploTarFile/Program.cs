@@ -9,11 +9,12 @@ Console.WriteLine($"Versao do .NET em uso: {RuntimeInformation
     .FrameworkDescription} - Ambiente: {Environment.MachineName}- Kernel: {Environment
     .OSVersion.VersionString}");
 
-var arquivoCompactado = $"databases{DateTime.Now:yyyy-MM-dd_HHmmss}.tar";
-TarFile.CreateFromDirectory(@"D:\Azure\Icons\databases", arquivoCompactado, true);
+var arquivoAgrupador = $"databases{DateTime.Now:yyyy-MM-dd_HHmmss}.tar";
+TarFile.CreateFromDirectory(@"D:\Azure\Icons\databases", arquivoAgrupador, true);
 
-if (File.Exists(arquivoCompactado))
+if (File.Exists(arquivoAgrupador))
 {
-    Console.WriteLine($"Arquivo {arquivoCompactado} gerado com sucesso!");
-    Console.WriteLine($"Para descomprimir execute o comando: tar -xvf {arquivoCompactado}");
+    Console.WriteLine($"Arquivo {arquivoAgrupador} gerado com sucesso!");
+    Console.WriteLine(
+        $"Para descomprimir extrair o conteudo utilize o comando: tar -xvf {arquivoAgrupador}");
 }
